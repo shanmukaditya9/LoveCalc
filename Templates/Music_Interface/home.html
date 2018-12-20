@@ -1,0 +1,72 @@
+{%extends 'Music_Interface\header.html'%}
+{%load staticfiles%}
+{%block content%}
+<head>
+    <link rel="stylesheet" href="{%static '/CSS/header.CSS'%}">
+</head>
+<div class="container" align="center">
+    &nbsp&nbsp&nbsp&nbsp
+    <form method="post" name="myform" action="/lovecalc/" >
+        {% csrf_token %}
+        <div class="container" align="center">
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h6>Enter Your Full Name:</h6></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="i"
+                           pattern="[a-zA-Z\s]{1,}" placeholder="Enter Full name here" name="name1" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" align="center">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h6>Enter Your DOB:</h6></label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="inputdate" placeholder="Enter DOB" name="db1" required>
+                </div>
+
+            </div>
+        </div>
+        <div class="container" align="center">
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h6>Enter Your Partner Name:</h6></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="i2" placeholder="Enter Partner's full name here"
+                           name="name2" pattern="[a-zA-Z\s]{1,}" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" align="center">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h6>Enter Your Partner DOB:</h6></label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="inputdate2" placeholder="Enter Partner's DOB"
+                           name="db2" required>
+                </div>
+            </div>
+        </div>
+        <div class="container" align="center">
+            <input type="image" src="{% static "Images/love.gif" %}" height="150" width="150" alt="Submit" >
+        </div>
+    </form>
+    <div class="container">
+        {%if n1 and n2 and result%}
+        <h3 style="display:inline;">Congratulations </h3>
+        <h4 style="display:inline;" > {{n1}} </h4>
+        <h5 style="display:inline;"> & </h5>
+        <h4 style="display:inline;"> {{n2}} </h4>
+        <h5 style="display:inline;"> for getting </h5>
+        <h7 style="display:inline;">{{result}}%</h7>
+        {%endif%}
+    </div>
+
+
+</div>
+
+
+{%endblock%}

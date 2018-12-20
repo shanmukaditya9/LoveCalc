@@ -1,0 +1,29 @@
+body{
+background-color: pink;
+}
+
+h3 {
+  color: white;
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+h4 {
+  text-shadow: 0 0 3px #FF0000;
+  font-size: 30px;
+  font-style: italic;
+}
+
+h6{
+font-family: "Georgia";
+   font-size: 20px;
+   font-style: italic;
+   color: black;
+}
+
+
+h7 {
+    color: yellow;
+    font-size: 60px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
